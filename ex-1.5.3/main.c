@@ -5,11 +5,11 @@ int auxTempo(unsigned int* t) {
     unsigned int s = SDL_GetTicks();
     unsigned int f = SDL_GetTicks();
 
-    unsigned int elapsed = f - s;
-    if (*t > elapsed) *t -= elapsed;
+    unsigned int delta = f - s;
+    if (*t > delta) *t -= delta;
     else *t = 0;
 
-    return elapsed;
+    return delta;
 }
 
 int main() {
